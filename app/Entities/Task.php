@@ -6,19 +6,19 @@ namespace App\Entities;
 use DateTime;
 
 abstract class Task{
-    private ?int $id = null;
-    private string $title;
-    private ?string $description = null;
-    private int $projectId;
-    private ?int $assigneeId = null;
-    private int $reporterId;
-    private string $priority; 
-    private string $status;  
-    private ?float $estimatedHours = null;
-    private float $actualHours = 0.0;
-    private ?DateTime $dueDate = null;
-    private ?DateTime $createdAt = null;
-    private ?DateTime $updatedAt = null;
+    protected ?int $id = null;
+    protected string $title;
+    protected ?string $description = null;
+    protected int $projectId;
+    protected ?int $assigneeId = null;
+    protected int $reporterId;
+    protected string $priority; 
+    protected string $status;  
+    protected ?float $estimatedHours = null; 
+    protected float $actualHours = 0.0;
+    protected ?DateTime $dueDate = null;
+    protected ?DateTime $createdAt = null;
+    protected ?DateTime $updatedAt = null;
 
 
     public function __construct(string $title,int $projectId,int $reporterId,string $priority = 'medium',string $status = 'todo',?string $description = null,?int $assigneeId = null,?float $estimatedHours = null,?DateTime $dueDate = null) {
