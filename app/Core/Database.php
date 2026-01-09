@@ -17,13 +17,11 @@ class Database {
         if (self::$instance === null) {
             try {
                 self::$instance = new PDO(
-                    "mysql:host=localhost;dbname=taskflow;charset=utf8",
-                    "root",
-                    "",
+                    "mysql:host=localhost;dbname=taskflow;charset=utf8","root","",
                   
                 );
             } catch (PDOException $e) {
-                die("Database connection failed: " . $e->getMessage());
+                die("erreur: " . $e->getMessage());
             }
         }
         return self::$instance;
