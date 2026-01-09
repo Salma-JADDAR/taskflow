@@ -14,9 +14,9 @@ class Database {
     public function __wakeup() {}
 
     public static function getInstance(): PDO {
-        if (self::$instance === null) {
+        if (Database::$instance === null) {
             try {
-                self::$instance = new PDO(
+                Database::$instance = new PDO(
                     "mysql:host=localhost;dbname=taskflow;charset=utf8","root","",
                   
                 );
@@ -24,6 +24,6 @@ class Database {
                 die("erreur: " . $e->getMessage());
             }
         }
-        return self::$instance;
+        return Database::$instance;
     }
 }
